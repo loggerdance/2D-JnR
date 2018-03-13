@@ -9,7 +9,7 @@ namespace Elements.Physical
 	{
 		public Entity()
 		{
-			
+			EntityAttributes = EntityAttributes.None;
 		}
 		public double X
 		{
@@ -24,6 +24,14 @@ namespace Elements.Physical
 			get; set;
 		}
 		public double Width
+		{
+			get; set;
+		}
+		public Vector Motion
+		{ 
+			get; set;
+		}
+		public EntityAttributes EntityAttributes 
 		{
 			get; set;
 		}

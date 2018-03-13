@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{FC93C6AF-BC5A-48DE-B37F-97A84011ED97}</ProjectGuid>
+    <ProjectGuid>{AE3B44C6-D790-479B-803F-BB595325D688}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Elements</RootNamespace>
-    <AssemblyName>Elements</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Test</RootNamespace>
+    <AssemblyName>Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <NoWin32Manifest>False</NoWin32Manifest>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -38,24 +38,31 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Physical" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Physical\Entity.cs" />
-    <Compile Include="Physical\EntityAttributes.cs" />
-    <Compile Include="Physical\EntityShape.cs" />
-    <Compile Include="Physical\Room.cs" />
-    <Compile Include="Physical\Vector.cs" />
-    <Compile Include="PresentableObject.cs" />
+    <ProjectReference Include="..\Calculations\Calculations.csproj">
+      <Project>{b20897fe-e0fc-4989-b86b-37c618a8b900}</Project>
+      <Name>Calculations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elements\Elements.csproj">
+      <Project>{fc93c6af-bc5a-48de-b37f-97a84011ed97}</Project>
+      <Name>Elements</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
